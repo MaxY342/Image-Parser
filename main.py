@@ -9,6 +9,7 @@ def parseImage(imagePath):
     img = Image.open(imagePath)
     # Use pytesseract to parse the image
     text = pytesseract.image_to_string(img)
-    print(text)
+    with open("Image-Parser\\output.txt", "w") as f:
+        f.write(text)
 
-parseImage(r"Image-Parser\images\test.png")
+parseImage(r"Image-Parser\images\leetcode.png")
